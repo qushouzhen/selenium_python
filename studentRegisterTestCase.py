@@ -108,7 +108,7 @@ class StudentRegisterTest(unittest.TestCase):
             self.driver.driver.find_element_by_xpath('//*[@id="app"]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/input').send_keys("asdfg")
         firefox = "/html/body/div[1]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/div[2]"
         chrome = '//*[@id="app"]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/div[2]'
-        error_message = self.getErrorMessage()
+        error_message = self.getErrorMessage(firefox, chrome)
         self.assertIn(" 用户名必须为6-20个字符 ", error_message)
 
     def testCase10(self):
@@ -119,7 +119,7 @@ class StudentRegisterTest(unittest.TestCase):
             self.driver.driver.find_element_by_xpath('//*[@id="app"]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/input').send_keys("asd123456789123456789")
         firefox = "/html/body/div[1]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/div[2]"
         chrome = '//*[@id="app"]/div/div/div[2]/div[3]/div/div[2]/form/div[1]/div[1]/div/div[2]'
-        error_message = self.getErrorMessage()
+        error_message = self.getErrorMessage(firefox, chrome)
         self.assertIn(" 用户名必须为6-20个字符 ", error_message)
 
 
